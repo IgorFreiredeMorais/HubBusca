@@ -34,6 +34,7 @@ const Home = () => {
     } catch (error) {
       console.error("Ocorreu um erro ao buscar os dados:", error);
       setError(true);
+      setIsLoading(false);
     }
   };
 
