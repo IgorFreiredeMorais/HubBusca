@@ -3,7 +3,7 @@ export type UserProps = {
     login:string;
     location:string;
     name:string;
-    id: number;
-    followers: number;
-    public_repos: number;
+    id?: number;
+    followers?: number;
+    public_repos?: number;
 }
