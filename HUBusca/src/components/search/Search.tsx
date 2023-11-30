@@ -17,7 +17,7 @@ const Search = ({ loadUser }: SearchProps) => {
 
   return (
     <S.Search>
-      <h2>Busque por um usuário:</h2>
+      <h2>Busque por um usuário do GitHub:</h2>
       <S.Container>
         <S.Input
           type="text"

@@ -40,3 +40,28 @@ export const Location = styled.p`
   }
 `;
 
+export const Container = styled.div`
+  display: flex;
+  margin-left: 1.5rem;
+`;
+
+export const Number = styled.h2`
+    background-color: #4ed8c7;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    text-align: center;
+`;
+
+export const Quantidade = styled.div`
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+`;
+
+export const Divisor = styled.div`
+  width: 2px;
+  height: 61px; 
+  background-color: #4ed8c7;
+  margin: 0 1rem; 
+`;
