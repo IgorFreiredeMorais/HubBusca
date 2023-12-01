@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { UserProps } from "../types/user";
 import { RepoProps } from "../types/repo";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import Loader from "../components/loader/Loader";
 import * as P from "./StylePerfil";
@@ -14,6 +14,8 @@ const Perfil = () => {
   const [repos, setRepos] = useState<RepoProps[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const { userName } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     setIsLoading(true);
@@ -38,9 +40,17 @@ const Perfil = () => {
     fetchData();
   }, [userName]);
 
+  const handleGoBack = () => {
+    if (location.state && location.state.fromHistory) {
+      navigate("/historico");
+    } else {
+      navigate(-1);
+    }
+  };
+
   return (
     <div>
-      <Link to="/">
+      <Link to="/" onClick={() => handleGoBack()}>
         <P.StyledArrowLink>
           <FaArrowLeft />
         </P.StyledArrowLink>
