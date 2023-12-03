@@ -28,7 +28,13 @@ const Historico = () => {
           return response.data;
         })
       );
-      setUsersData(data);
+
+      const uniqueUsers = data.filter(
+        (user, index, self) =>
+          index === self.findIndex((u) => u.login === user.login)
+      );
+
+      setUsersData(uniqueUsers);
     };
 
     if (searchHistory.length > 0) {
